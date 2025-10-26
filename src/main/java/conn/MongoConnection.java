@@ -22,6 +22,6 @@ public class MongoConnection {
                 .build();
 
         MongoClient client = MongoClients.create(settings);
-        return client.getDatabase(DB_NAME);
+        return client.getDatabase(DB_NAME).withCodecRegistry(codecRegistry);
     }
 }

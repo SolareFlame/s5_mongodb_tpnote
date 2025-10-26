@@ -1,11 +1,13 @@
 package objects;
 
+import org.bson.codecs.pojo.annotations.BsonProperty;
+
 public record Rating(
-        Integer user_id,
-        String name,
-        Integer  age,
-        String gender,
-        String occupation,
-        Integer  rating,
-        Long timestamp
+        @BsonProperty("user_id") Integer user_id,
+        @BsonProperty("name") String name,
+        @BsonProperty("age") Integer age,
+        @BsonProperty("gender") String gender,
+        @BsonProperty("occupation") String occupation,
+        @BsonProperty("rating") Integer rating,
+        @BsonProperty("timestamp") Long timestamp
 ) {}

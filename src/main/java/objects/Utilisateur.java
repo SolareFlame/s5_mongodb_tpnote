@@ -10,10 +10,10 @@ public record Utilisateur(
     public static Utilisateur fromRating(Rating r) {
         return new Utilisateur(
                 r.user_id(),
-                r.name(),
-                r.age(),
-                r.gender(),
-                r.occupation()
+                r.name() != null ? r.name() : "Inconnu",
+                r.age() != null ? r.age() : 0,
+                r.gender() != null ? r.gender() : "N/A",
+                r.occupation() != null ? r.occupation() : "N/A"
         );
     }
 }
